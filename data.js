@@ -79,6 +79,6 @@ let countries = [
         id: 20,
         country: 'United States',
     },
-];
+]
 
-export { countries };
+export { countries }
