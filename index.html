@@ -4,12 +4,27 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="/tailwind.css" rel="stylesheet">
+        <link href="/tailwind.css" rel="stylesheet" />
         <title>Hangman</title>
     </head>
     <body class="bg-gray-900">
-        <h2 class="text-white text-center text-2xl font-bold my-12 uppercase">Hangman Vanilla JS!</h2>
-        <script src="/app.js"></script>
-        <script src="/data.js"></script>
+        <h2 class="text-white text-center text-2xl font-bold my-12 uppercase">
+            Hangman Vanilla JS!
+        </h2>
+        <div class="flex justify-center">
+            <input
+                type="text"
+                name="letter"
+                id="letter"
+                class="rounded-lg border border-white w-8"
+            />
+        </div>
+        <div class="flex flex-col text-white justify-center my-12">
+            <div class="text-center text-xl">List of Countries</div>
+            <ul class="mx-auto">
+                <li>- Germany</li>
+            </ul>
+        </div>
+        <script type="module" src="/app.js"></script>
     </body>
 </html>
