@@ -2,15 +2,7 @@
 
 ##Todo
 - [x] Base Files
-- [ ] Initalize Git Repo
+- [x] Initalize Git Repo
 - [ ] Make grid
 - [ ] Eventlistener
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
 - [ ] Deployment
