@@ -11,6 +11,6 @@ run `yarn prettier --write .` for clean up.
 -   [x] Make list w words
 -   [x] Place input field
 -   [x] Match data
--   [ ] Make grid
+-   [ ] Form validation
 -   [ ] Eventlistener
 -   [ ] Deployment
