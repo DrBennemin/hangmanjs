@@ -9,14 +9,14 @@ const generatedCountry = document.querySelector(".country")
 
 //Events
 buttonSubmit.addEventListener("click", submitCountry)
-document.addEventListener("DOMContentLoaded", displayRandomCounty)
+document.addEventListener("DOMContentLoaded", displayRandomCountry)
 
 //Functions
 let randomCountry = countries[Math.floor(Math.random() * countries.length)];
 console.log(randomCountry.country);
 
-function displayRandomCounty() {
- let randomCountry = document.createElement("div")
+function displayRandomCountry() {
+ let randomCountry = document.createElement("p")
  randomCountry.innerText = randomCountry.country
  randomCountry.appendChild(generatedCountry)
 }
