@@ -5,15 +5,25 @@ import { countries } from '/data.js'
 const list = document.querySelector('#countries')
 const countryInput = document.querySelector(".input")
 const buttonSubmit = document.querySelector(".submit")
+const generatedCountry = document.querySelector(".country")
 
 //Events
 buttonSubmit.addEventListener("click", submitCountry)
+document.addEventListener("DOMContentLoaded", displayRandomCounty)
 
 //Functions
+let randomCountry = countries[Math.floor(Math.random() * countries.length)];
+console.log(randomCountry.country);
+
+function displayRandomCounty() {
+ let randomCountry = document.createElement("div")
+ randomCountry.innerText = randomCountry.country
+ randomCountry.appendChild(generatedCountry)
+}
+
 function matchCountry(userInput) {
-    let randomCountry = countries[Math.floor(Math.random() * countries.length)];
     console.log(randomCountry.country);
-    if(userInput === randomCountry.country) {
+    if(userInput.toLowerCase() === randomCountry.country.toLowerCase()) {
         alert("great");
     } else {
         alert("shit");
