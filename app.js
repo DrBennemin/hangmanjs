@@ -1,44 +1,44 @@
 //Imports
-import { countries } from '/data.js'
+import { items } from '/data.js'
+
+//Logic
+let randomItem = items[Math.floor(Math.random() * items.length)];
+console.log(randomItem.item);
 
 //Selectors
-const list = document.querySelector('#countries')
-const countryInput = document.querySelector(".input")
+const detaiList = document.querySelector('#items')
+const itemInput = document.querySelector(".input")
 const buttonSubmit = document.querySelector(".submit")
-const generatedCountry = document.querySelector(".country")
+const randomItemDiv = document.querySelector(".random-item")
 
 //Events
-buttonSubmit.addEventListener("click", submitCountry)
-document.addEventListener("DOMContentLoaded", displayRandomCountry)
+buttonSubmit.addEventListener("click", submitItem)
+document.addEventListener("DOMContentLoaded", displayRandomItem)
 
 //Functions
-let randomCountry = countries[Math.floor(Math.random() * countries.length)];
-console.log(randomCountry.country);
-
-function displayRandomCountry() {
- let randomCountry = document.createElement("p")
- randomCountry.innerText = randomCountry.country
- randomCountry.appendChild(generatedCountry)
+function displayRandomItem() {
+    let generatedItem = randomItem.item
+    randomItemDiv.appendChild(generatedItem)
 }
 
-function matchCountry(userInput) {
-    console.log(randomCountry.country);
-    if(userInput.toLowerCase() === randomCountry.country.toLowerCase()) {
+function matchItem(userInput) {
+    console.log(randomItem.item);
+    if(userInput.toLowerCase() === randomItem.item.toLowerCase()) {
         alert("great");
     } else {
         alert("shit");
     }
 }
 
-function submitCountry() {
+function submitItem() {
     event.preventDefault();
-    const newGuess = countryInput.value;
-    matchCountry(newGuess)
-    countryInput.value = '';
+    const newGuess = itemInput.value;
+    matchItem(newGuess)
+    itemInput.value = '';
 }
 
-countries.forEach((country) => {
-    const countryList = document.createElement('div')
-    countryList.innerText = country.country;
-    list.appendChild(countryList)
+items.forEach((item) => {
+    const itemList = document.createElement('div')
+    itemList.innerText = item.item;
+    detaiList.appendChild(itemList)
 })
