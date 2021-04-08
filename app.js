@@ -10,6 +10,7 @@ function clicktest() {
     event.preventDefault();
     const newGuess = countryInput.value;
     console.log(newGuess);
+    countryInput.value = '';
 }
 
 countries.forEach((country) => {
