@@ -10,10 +10,20 @@ const buttonSubmit = document.querySelector(".submit")
 buttonSubmit.addEventListener("click", submitCountry)
 
 //Functions
+function matchCountry(userInput) {
+    let randomCountry = countries[Math.floor(Math.random() * countries.length)];
+    console.log(randomCountry.country);
+    if(userInput === randomCountry.country) {
+        alert("great");
+    } else {
+        alert("shit");
+    }
+}
+
 function submitCountry() {
     event.preventDefault();
     const newGuess = countryInput.value;
-    console.log(newGuess);
+    matchCountry(newGuess)
     countryInput.value = '';
 }
 
@@ -22,8 +32,3 @@ countries.forEach((country) => {
     countryList.innerText = country.country;
     list.appendChild(countryList)
 })
-
-let randomCountry = countries[Math.floor(Math.random() * countries.length)];
-console.log(randomCountry.country);
-
-// var item = items[Math.floor(Math.random() * items.length)];
