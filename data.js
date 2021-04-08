@@ -1,16 +1,16 @@
 let countries = [
     {
         id: 1,
-        country: 'Indonesia',
+        country: 'Mayo',
     },
-    // {
-    //     id: 2,
-    //     country: 'Morocco',
-    // },
-    // {
-    //     id: 3,
-    //     country: 'Philippines',
-    // },
+    {
+        id: 2,
+        country: 'Salat',
+    },
+    {
+        id: 3,
+        country: 'Tomate',
+    },
     // {
     //     id: 4,
     //     country: 'Portugal',
