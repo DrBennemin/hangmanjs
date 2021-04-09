@@ -3,9 +3,9 @@ import { items } from '/data.js'
 
 //Logic
 let randomItem = items[Math.floor(Math.random() * items.length)];
-let splitRandomItem = randomItem.item
+let splitRandomItem = [...randomItem.item]
 console.log(randomItem.item);
-console.log([...splitRandomItem]);
+console.log(splitRandomItem);
 
 //Selectors
 const detaiList = document.querySelector('#items')
@@ -18,10 +18,20 @@ buttonSubmit.addEventListener("click", submitItem)
 document.addEventListener("DOMContentLoaded", displayRandomItem)
 
 //Functions
+items.forEach((item) => {
+    const itemList = document.createElement('div')
+    itemList.innerText = item.item;
+    detaiList.appendChild(itemList)
+})
+
 function displayRandomItem() {
-    let randomItemP = document.createElement("p")
-    randomItemP.innerText = splitRandomItem
-    randomItemDiv.appendChild(randomItemP)
+    let singleLetterRandomItem = [...splitRandomItem]
+    singleLetterRandomItem.forEach(function(letter) {
+        console.log(letter);
+        let randomItemP = document.createElement("p")
+        randomItemP.innerText = singleLetterRandomItem
+        randomItemDiv.appendChild(randomItemP)
+    })
 }
 
 function matchItem(userInput) {
@@ -39,9 +49,3 @@ function submitItem() {
     matchItem(newGuess)
     itemInput.value = '';
 }
-
-items.forEach((item) => {
-    const itemList = document.createElement('div')
-    itemList.innerText = item.item;
-    detaiList.appendChild(itemList)
-})
