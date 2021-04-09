@@ -30,7 +30,7 @@ function displayRandomItem() {
         console.log(letter);
         let randomItemP = document.createElement("p")
         randomItemP.innerText = singleLetterRandomItem[0]
-        randomItemP.classList.add("px-4", "underline")
+        randomItemP.classList.add("px-2", "underline")
         randomItemDiv.appendChild(randomItemP)
     })
 }
