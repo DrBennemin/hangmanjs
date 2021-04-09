@@ -29,7 +29,8 @@ function displayRandomItem() {
     singleLetterRandomItem.forEach(function(letter) {
         console.log(letter);
         let randomItemP = document.createElement("p")
-        randomItemP.innerText = singleLetterRandomItem
+        randomItemP.innerText = singleLetterRandomItem[0]
+        randomItemP.classList.add("px-4", "underline")
         randomItemDiv.appendChild(randomItemP)
     })
 }
