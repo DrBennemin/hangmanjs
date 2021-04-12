@@ -15,7 +15,7 @@ const buttonVisible = document.querySelector('#visible')
 
 //Events
 buttonSubmit.addEventListener('click', submitItem)
-buttonVisible.addEventListener("click", toggleVisibility)
+buttonVisible.addEventListener('click', toggleVisibility)
 document.addEventListener('DOMContentLoaded', displayRandomItem)
 
 //Functions
@@ -26,7 +26,7 @@ items.forEach((item) => {
 })
 
 function toggleVisibility() {
-    randomItemP.classList.toggle("invisible")
+    randomItemDiv.classList.toggle('invisible')
 }
 
 function displayRandomItem() {
