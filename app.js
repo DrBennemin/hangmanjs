@@ -4,8 +4,6 @@ import { items } from '/data.js'
 //Logic
 let randomItem = items[Math.floor(Math.random() * items.length)];
 let splitRandomItem = [...randomItem.item]
-console.log(randomItem.item);
-console.log(splitRandomItem);
 
 //Selectors
 const detaiList = document.querySelector('#items')
@@ -25,18 +23,25 @@ items.forEach((item) => {
 })
 
 function displayRandomItem() {
+    console.log(randomItem.item);
     let singleLetterRandomItem = [...splitRandomItem]
     singleLetterRandomItem.forEach(function(letter) {
-        console.log(letter);
         let randomItemP = document.createElement("p")
-        randomItemP.innerText = singleLetterRandomItem[0]
-        randomItemP.classList.add("px-2", "underline")
+        randomItemP.innerText = letter
+        randomItemP.classList.add("px-2", "underline", "invisible")
         randomItemDiv.appendChild(randomItemP)
+        console.log(randomItemP.classList);
+        //Jetzt kann ich mir die css klassen der einzelnen Items anzeigen lassen. Ich muss nur noch heraus finden wie ich diese beeinflussen kann.
     })
 }
 
+function toggleVisibility() {
+    // if(randomItemDiv.classList === "invisible" ){
+
+    // }
+}
+
 function matchItem(userInput) {
-    console.log(randomItem.item);
     if(userInput.toLowerCase() === randomItem.item.toLowerCase()) {
         alert("great");
     } else {
