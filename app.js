@@ -15,7 +15,7 @@ const buttonVisible = document.querySelector('#visible')
 
 //Events
 buttonSubmit.addEventListener('click', submitItem)
-buttonVisible.addEventListener('click', toggleVisibility)
+buttonVisible.addEventListener("click", toggleVisibility)
 document.addEventListener('DOMContentLoaded', displayRandomItem)
 
 //Functions
@@ -24,10 +24,6 @@ items.forEach((item) => {
     itemList.innerText = item.item
     detaiList.appendChild(itemList)
 })
-
-function toggleVisibility() {
-    randomItemDiv.classList.toggle('invisible')
-}
 
 function displayRandomItem() {
     console.log(randomItem.item)
@@ -38,6 +34,12 @@ function displayRandomItem() {
         randomItemP.classList.add('px-2', 'underline', 'random-item-p')
         randomItemDiv.appendChild(randomItemP)
     })
+}
+
+function toggleVisibility() {
+    randomItemDiv.classList.toggle("invisible")
+    //Warum geht randomItemDiv, aber randomItemP nicht?
+    randomItemP.classList.toggle("invisible")
 }
 
 function matchItem(userInput) {
