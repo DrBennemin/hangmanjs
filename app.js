@@ -9,6 +9,7 @@ let splitRandomItem = [...randomItem.item]
 const detaiList = document.querySelector('#items')
 const itemInput = document.querySelector('.input')
 const buttonSubmit = document.querySelector('.submit')
+const randomItemP = document.querySelector('.random-item-p')
 const randomItemDiv = document.querySelector('#random-item')
 const buttonVisible = document.querySelector('#visible')
 
@@ -24,21 +25,19 @@ items.forEach((item) => {
     detaiList.appendChild(itemList)
 })
 
+function toggleVisibility() {
+    randomItemP.classList.toggle("invisible")
+}
+
 function displayRandomItem() {
     console.log(randomItem.item)
     let singleLetterRandomItem = [...splitRandomItem]
     singleLetterRandomItem.forEach(function (letter) {
         let randomItemP = document.createElement('p')
         randomItemP.innerText = letter
-        randomItemP.classList.add('px-2', 'underline')
+        randomItemP.classList.add('px-2', 'underline', 'random-item-p')
         randomItemDiv.appendChild(randomItemP)
-        randomItemDiv.classList.add("invisible")
-        // console.log(randomItemP.classList);
     })
-}
-
-function toggleVisibility() {
-    randomItemDiv.classList.toggle("invisible")
 }
 
 function matchItem(userInput) {
