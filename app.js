@@ -10,9 +10,11 @@ const detaiList = document.querySelector('#items')
 const itemInput = document.querySelector(".input")
 const buttonSubmit = document.querySelector(".submit")
 const randomItemDiv = document.querySelector("#random-item")
+const buttonVisible = document.querySelector('#visible')
 
 //Events
 buttonSubmit.addEventListener("click", submitItem)
+buttonVisible.addEventListener("click", toggleVisibility)
 document.addEventListener("DOMContentLoaded", displayRandomItem)
 
 //Functions
@@ -28,17 +30,18 @@ function displayRandomItem() {
     singleLetterRandomItem.forEach(function(letter) {
         let randomItemP = document.createElement("p")
         randomItemP.innerText = letter
-        randomItemP.classList.add("px-2", "underline", "invisible")
+        randomItemP.classList.add("px-2", "underline", "visible")
         randomItemDiv.appendChild(randomItemP)
         console.log(randomItemP.classList);
-        //Jetzt kann ich mir die css klassen der einzelnen Items anzeigen lassen. Ich muss nur noch heraus finden wie ich diese beeinflussen kann.
     })
 }
 
 function toggleVisibility() {
-    // if(randomItemDiv.classList === "invisible" ){
-
-    // }
+    if(randomItemP.classList = "invisible" ){
+        console.log("test");
+        //randomItemP must be declared outsides of displayRandomItem to reach it inside here
+        tokenList.replace("invisible", "visible")
+    }
 }
 
 function matchItem(userInput) {
