@@ -11,6 +11,23 @@
         <h2 class="text-white text-center text-2xl font-bold my-12 uppercase">
             Häng ze Män!
         </h2>
+        <div id="hangman" class="py-12">
+            <div class="w-8 h-8 bg-white mx-auto rounded-full visible"></div>
+            <div class="w-1 h-2 bg-white mx-auto visible"></div>
+            <div class="flex justify-center">
+                <div class="flex justify-end w-6 h-1 bg-white visible"></div>
+                <div class="flex justify-start w-6 h-1 bg-white visible"></div>
+            </div>
+            <div class="w-1 h-8 bg-white mx-auto visible"></div>
+            <div class="flex justify-center space-x-4">
+                <div class="w-1 h-6 bg-white transform rotate-45 visible"></div>
+                <div class="w-1 h-6 bg-white transform -rotate-45 visible"></div>
+            </div>
+        </div>
+        <div
+            id="random-item"
+            class="flex justify-center text-white text-center py-12 text-2xl font-bold uppercase"
+        ></div>
         <div class="flex justify-center">
             <form>
                 <input
@@ -31,10 +48,6 @@
                 </button>
             </form>
         </div>
-        <div
-            id="random-item"
-            class="flex justify-center text-white text-center py-12 text-2xl font-bold uppercase"
-        ></div>
         <div class="flex flex-col text-white justify-center my-12">
             <button
                 id="visible"
