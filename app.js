@@ -7,6 +7,7 @@ let splitRandomItem = [...randomItem.item]
 
 //Selectors
 const detaiList = document.querySelector('#items')
+//const buttonSubmit = document.querySelector('.submit')
 const randomItemDiv = document.querySelector('#random-item')
 const buttonVisible = document.querySelector('#visible')
 const userInput = document.querySelector('#userInput')
@@ -26,27 +27,29 @@ items.forEach((item) => {
 function displayRandomItem() {
     let singleLetterRandomItem = [...splitRandomItem]
     singleLetterRandomItem.forEach(function (letter) {
-        let randomItemLetter = document.createElement('p')
-        randomItemLetter.innerText = letter
-        randomItemLetter.classList.add('px-2', 'underline', 'random-item-p', "invisible")
-        randomItemDiv.appendChild(randomItemLetter)
+        let randomItemP = document.createElement('p')
+        let randomItemBorderBottom = document.createElement('div')
+        randomItemP.innerText = letter
+        randomItemP.classList.add('px-2', 'random-item-letter' , 'invisible')
+        randomItemBorderBottom.classList.add('border-b', 'border-white', 'visible')
+        randomItemDiv.appendChild(randomItemP)
+        randomItemP.appendChild(randomItemBorderBottom)
     })
 }
 
 function toggleVisibility() {
-    const randomItemP = document.querySelector('.random-item-p')
+    const randomItemP = document.querySelector('.random-item-letter')
     randomItemP.classList.toggle("invisible")
 }
 
 function matchLetter(userInput) {
-    let letter = userInput.target.value.toLowerCase();
-    console.log(letter);
-    console.log(splitRandomItem);
-    if (splitRandomItem.includes(letter)) {
+    let newGuess = userInput.target.value
+    let positionInArray = splitRandomItem.indexOf(newGuess)
+    console.log(positionInArray);
+    console.log(newGuess);
+    if (splitRandomItem.includes(newGuess)) {
         console.log("letter is in the word");
-        const randomItemP = document.querySelector('.random-item-p')
-        randomItemP.classList.replace("invisible", "visible")
-        console.log("classlist got replaced");
+        //splitRandomItem[positionInArray].classList.replace("invisible", "visible")
     } else {
         console.log("not");
     }
