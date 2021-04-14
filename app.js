@@ -7,17 +7,16 @@ let splitRandomItem = [...randomItem.item]
 
 //Selectors
 const detaiList = document.querySelector('#items')
-const itemInput = document.querySelector('.input')
 const buttonSubmit = document.querySelector('.submit')
 const randomItemDiv = document.querySelector('#random-item')
 const buttonVisible = document.querySelector('#visible')
 const userInput = document.querySelector('#userInput')
 
 //Events
-buttonSubmit.addEventListener('click', submitItem)
+//buttonSubmit.addEventListener('keyup', submitItem)
 buttonVisible.addEventListener("click", toggleVisibility)
 document.addEventListener('DOMContentLoaded', displayRandomItem)
-userInput.addEventListener('keyup', showUserInput)
+userInput.addEventListener('keyup', submitItem)
 
 //Functions
 items.forEach((item) => {
@@ -41,25 +40,34 @@ function toggleVisibility() {
     randomItemP.classList.toggle("invisible")
 }
 
+/* function matchLetter(userInput) {
+    let letter = userInput.target.value;
+    console.log(letter);
+} */
+
 function matchLetter(userInput) {
-    if (userInput.toLowerCase() === randomItem.item.toLowerCase()) {
+    let letter = userInput.target.value;
+    console.log(letter);
+    console.log(splitRandomItem);
+    if (splitRandomItem.includes(letter)) {
+        console.log("letter is in the word");
+    } else {
+        console.log("not");
+    }
+    /* if (userInput.toLowerCase() === randomItem.item.toLowerCase()) {
         alert('great')
     } else {
         alert('shit')
-    }
+    } */
 }
 
-function submitItem() {
+function submitItem(value) {
     event.preventDefault()
-    const newGuess = itemInput.value
-    matchLetter(newGuess)
-    itemInput.value = ''
+    matchLetter(value)
+    userInput.value = ""
 }
 
-function showUserInput(userInput) {
-    let letter = userInput.target.value;
-    console.log(letter);
-}
+
 
 
 
