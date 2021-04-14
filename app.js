@@ -47,8 +47,9 @@ function matchLetter(userInput) {
     let positionInArray = splitRandomItem.indexOf(newGuess)
     console.log(positionInArray);
     console.log(newGuess);
-    if (splitRandomItem.includes(newGuess)) {
+    if (positionInArray >= 0) {
         console.log("letter is in the word");
+        console.log(splitRandomItem.indexOf(newGuess));
         //pTagWithClassInvisible[positionInArray].classList.replace("invisible", "visible")
     } else {
         console.log("not");
