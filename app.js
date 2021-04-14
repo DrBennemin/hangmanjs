@@ -49,7 +49,7 @@ function matchLetter(userInput) {
     console.log(newGuess);
     if (splitRandomItem.includes(newGuess)) {
         console.log("letter is in the word");
-        //splitRandomItem[positionInArray].classList.replace("invisible", "visible")
+        //pTagWithClassInvisible[positionInArray].classList.replace("invisible", "visible")
     } else {
         console.log("not");
     }
@@ -60,10 +60,6 @@ function submitItem(value) {
     matchLetter(value)
     userInput.value = ""
 }
-
-
-
-
 
 /*
 -show user input in console
