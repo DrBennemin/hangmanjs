@@ -9,14 +9,15 @@ let splitRandomItem = [...randomItem.item]
 const detaiList = document.querySelector('#items')
 const itemInput = document.querySelector('.input')
 const buttonSubmit = document.querySelector('.submit')
-//const randomItemP = document.querySelector('.random-item-p')
 const randomItemDiv = document.querySelector('#random-item')
 const buttonVisible = document.querySelector('#visible')
+const userInput = document.querySelector('#userInput')
 
 //Events
 buttonSubmit.addEventListener('click', submitItem)
 buttonVisible.addEventListener("click", toggleVisibility)
 document.addEventListener('DOMContentLoaded', displayRandomItem)
+userInput.addEventListener('keyup', showUserInput)
 
 //Functions
 items.forEach((item) => {
@@ -26,7 +27,6 @@ items.forEach((item) => {
 })
 
 function displayRandomItem() {
-    console.log(randomItem.item)
     let singleLetterRandomItem = [...splitRandomItem]
     singleLetterRandomItem.forEach(function (letter) {
         let randomItemLetter = document.createElement('p')
@@ -41,7 +41,7 @@ function toggleVisibility() {
     randomItemP.classList.toggle("invisible")
 }
 
-function matchItem(userInput) {
+function matchLetter(userInput) {
     if (userInput.toLowerCase() === randomItem.item.toLowerCase()) {
         alert('great')
     } else {
@@ -52,6 +52,19 @@ function matchItem(userInput) {
 function submitItem() {
     event.preventDefault()
     const newGuess = itemInput.value
-    matchItem(newGuess)
+    matchLetter(newGuess)
     itemInput.value = ''
 }
+
+function showUserInput(userInput) {
+    let letter = userInput.target.value;
+    console.log(letter);
+}
+
+
+
+/*
+-show user input in console
+-save into var
+-match letter from userinput w letter from randomItem
+*/
