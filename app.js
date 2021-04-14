@@ -7,7 +7,6 @@ let splitRandomItem = [...randomItem.item]
 
 //Selectors
 const detaiList = document.querySelector('#items')
-//const buttonSubmit = document.querySelector('.submit')
 const randomItemDiv = document.querySelector('#random-item')
 const buttonVisible = document.querySelector('#visible')
 const userInput = document.querySelector('#userInput')
@@ -47,14 +46,10 @@ function matchLetter(userInput) {
         console.log("letter is in the word");
         const randomItemP = document.querySelector('.random-item-p')
         randomItemP.classList.replace("invisible", "visible")
+        console.log("classlist got replaced");
     } else {
         console.log("not");
     }
-    /* if (userInput.toLowerCase() === randomItem.item.toLowerCase()) {
-        alert('great')
-    } else {
-        alert('shit')
-    } */
 }
 
 function submitItem(value) {
