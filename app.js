@@ -7,7 +7,7 @@ let splitRandomItem = [...randomItem.item]
 
 //Selectors
 const detaiList = document.querySelector('#items')
-//const buttonSubmit = document.querySelector('.submit')
+// const buttonSubmit = document.querySelector('.submit')
 const randomItemDiv = document.querySelector('#random-item')
 const userInput = document.querySelector('#userInput')
 const randomItemP = document.getElementsByClassName('random-item-letter')
@@ -37,14 +37,12 @@ function displayRandomItem() {
 }
 
 function matchLetter (userInput) {
-    let newGuess = userInput.target.value
+    let newGuess = userInput.target.value.toLowerCase()
     for (let index = 0; index < splitRandomItem.length; index ++) {
-        if(splitRandomItem[index] == newGuess) {
-            console.log(randomItemP);
+        if(splitRandomItem[index] === newGuess) {
             randomItemP[index].classList.replace("invisible", "visible")
-            console.log(index);
         } else {
-            console.log(`Der Buchstabe ${newGuess} ist an dieser Stelle im Wort nicht enthalten`);
+            alert("false")
         }
     }
 }
