@@ -9,12 +9,10 @@ let splitRandomItem = [...randomItem.item]
 const detaiList = document.querySelector('#items')
 //const buttonSubmit = document.querySelector('.submit')
 const randomItemDiv = document.querySelector('#random-item')
-const buttonVisible = document.querySelector('#visible')
 const userInput = document.querySelector('#userInput')
 const randomItemP = document.getElementsByClassName('random-item-letter')
 
 //Events
-buttonVisible.addEventListener("click", toggleVisibility)
 document.addEventListener('DOMContentLoaded', displayRandomItem)
 userInput.addEventListener('keyup', submitItem)
 
@@ -38,30 +36,10 @@ function displayRandomItem() {
     })
 }
 
-function toggleVisibility() {
-    const randomItemP = document.querySelector('.random-item-letter')
-    randomItemP.classList.toggle("invisible")
-}
-
-// function matchLetter(userInput) {
-//     let newGuess = userInput.target.value
-//     let positionInArray = splitRandomItem.indexOf(newGuess)
-//     console.log(positionInArray);
-//     console.log(newGuess);
-//     if (positionInArray >= 0) {
-//         console.log("letter is in the word");
-//         console.log(splitRandomItem.indexOf(newGuess));
-//         //pTagWithClassInvisible[positionInArray].classList.replace("invisible", "visible")
-//     } else {
-//         console.log("not");
-//     }
-// }
-
 function matchLetter (userInput) {
     let newGuess = userInput.target.value
     for (let index = 0; index < splitRandomItem.length; index ++) {
         if(splitRandomItem[index] == newGuess) {
-            //Warum kann ich den <p> nicht selektieren, obwohl ich diesen ausserhalb der Funktion definire. Vermutlich weil das element im dom nicht initial existiert?!
             console.log(randomItemP);
             randomItemP[index].classList.replace("invisible", "visible")
             console.log(index);
@@ -78,8 +56,11 @@ function submitItem(value) {
     userInput.value = ""
 }
 
-/*
--show user input in console
--save into var
--match letter from userinput w letter from randomItem
+/* 
+Als nächstes will ich das keyup event gegen ein submit - 
+enter event ablösen und das uppercaseproblem
+angehen, vielleicht dann mit clientside validation 
+noch was machen und dann geht es ab
+erst müssen die falseGuesses gespeichert werden und 
+angezeigt werden und dann geht es dem strichmännchen an den kragen
 */
