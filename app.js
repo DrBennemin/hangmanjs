@@ -42,19 +42,29 @@ function toggleVisibility() {
     randomItemP.classList.toggle("invisible")
 }
 
-function matchLetter(userInput) {
+// function matchLetter(userInput) {
+//     let newGuess = userInput.target.value
+//     let positionInArray = splitRandomItem.indexOf(newGuess)
+//     console.log(positionInArray);
+//     console.log(newGuess);
+//     if (positionInArray >= 0) {
+//         console.log("letter is in the word");
+//         console.log(splitRandomItem.indexOf(newGuess));
+//         //pTagWithClassInvisible[positionInArray].classList.replace("invisible", "visible")
+//     } else {
+//         console.log("not");
+//     }
+// }
+
+function matchLetter (userInput) {
     let newGuess = userInput.target.value
-    let positionInArray = splitRandomItem.indexOf(newGuess)
-    console.log(positionInArray);
-    console.log(newGuess);
-    if (positionInArray >= 0) {
-        console.log("letter is in the word");
-        console.log(splitRandomItem.indexOf(newGuess));
-        //pTagWithClassInvisible[positionInArray].classList.replace("invisible", "visible")
-    } else {
-        console.log("not");
+    for (let i=0; i<splitRandomItem.length; i++) {
+        if(splitRandomItem[i] == newGuess) {
+            console.log(i);
+        }
     }
 }
+
 
 function submitItem(value) {
     event.preventDefault()
