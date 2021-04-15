@@ -58,9 +58,14 @@ function toggleVisibility() {
 
 function matchLetter (userInput) {
     let newGuess = userInput.target.value
-    for (let i=0; i<splitRandomItem.length; i++) {
-        if(splitRandomItem[i] == newGuess) {
-            console.log(i);
+    for (let index = 0; index < splitRandomItem.length; index ++) {
+        if(splitRandomItem[index] == newGuess) {
+            //Warum kann ich den <p> nicht selektieren, vermutlich weil das element im dom nicht initial existiert?!
+            let guessedLetter = document.getElementsByClassName(".random-item-letter")
+            console.log(guessedLetter);
+            console.log(index);
+        } else {
+            console.log(`Der Buchstabe ${newGuess} ist an dieser Stelle im Wort nicht enthalten`);
         }
     }
 }
