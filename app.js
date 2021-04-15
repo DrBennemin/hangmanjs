@@ -11,7 +11,7 @@ const detaiList = document.querySelector('#items')
 const randomItemDiv = document.querySelector('#random-item')
 const buttonVisible = document.querySelector('#visible')
 const userInput = document.querySelector('#userInput')
-const randomItemP = document.getElementsByClassName('.random-item-letter')
+const randomItemP = document.getElementsByClassName('random-item-letter')
 
 //Events
 buttonVisible.addEventListener("click", toggleVisibility)
@@ -63,7 +63,7 @@ function matchLetter (userInput) {
         if(splitRandomItem[index] == newGuess) {
             //Warum kann ich den <p> nicht selektieren, obwohl ich diesen ausserhalb der Funktion definire. Vermutlich weil das element im dom nicht initial existiert?!
             console.log(randomItemP);
-            randomItemP.classList.replace("invisible", "visible")
+            randomItemP[index].classList.replace("invisible", "visible")
             console.log(index);
         } else {
             console.log(`Der Buchstabe ${newGuess} ist an dieser Stelle im Wort nicht enthalten`);
